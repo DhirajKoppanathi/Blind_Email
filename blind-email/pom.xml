@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.entrepreneurship_project.dhs_2019.blind_email</groupId>
+  <artifactId>blind-email</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Blind Email</name>
+  <description>An application designed to help visually impaired persons utilize an email service through voice. Allows for creating messages, sending emails, receiving emails, and organizing emails on an accompanying physical device still in development.</description>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>org.simplejavamail</groupId>
+		<artifactId>simple-java-mail</artifactId>
+		<version>5.1.6</version>
+  	</dependency>
+  </dependencies>
+</project>
