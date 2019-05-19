@@ -1,0 +1,7 @@
+Mail 1 Subject: Test Email
+Mail 1 Date: Sun May 19 13:05:21 PDT 2019
+Mail 1 Content: 
+
+This is a test email for my computer science entrepreneurship project.
+
+
