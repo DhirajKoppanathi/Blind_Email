@@ -1,16 +1,12 @@
 package com.entrepreneurship_project.dhs_2019.blind_email;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.Properties;
-
 import javax.mail.BodyPart;
 import javax.mail.Folder;
 import javax.mail.Message;
@@ -21,7 +17,7 @@ import javax.mail.internet.MimeMultipart;
  
 public class GmailInbox {
  
-    private BufferedWriter f;
+    
 
 //	public static void main(String[] args) {
 // 
@@ -29,6 +25,7 @@ public class GmailInbox {
 //        gmail.read();
 // 
 //    }
+	private File f;
     
     private String getTextFromMessage(Message message) throws MessagingException, IOException {
         String result = "";
@@ -60,7 +57,7 @@ public class GmailInbox {
         return result;
     }
     
-    private File getFileFromResources(String fileName) {
+    public File getFileFromResources(String fileName) {
 
         ClassLoader classLoader = getClass().getClassLoader();
 
@@ -75,9 +72,7 @@ public class GmailInbox {
     
  
     public void read() {
- 
-        Properties props = new Properties();
- 
+        Properties props = new Properties(); 
         try {
             props.load(new FileInputStream(new File(this.getClass().getResource( "/smtp.properties" ).toURI())));
             Session session = Session.getDefaultInstance(props, null);
@@ -94,9 +89,11 @@ public class GmailInbox {
             Message[] messages = inbox.getMessages();
              // System.out.println("------------------------------\n\n");
             
-            File file = new File("C:\\Users\\dhira\\Documents\\AP_CSA\\Entrepreneurship_Proj_2019\\blind-email\\src\\main\\resources\\contents.txt");
-            FileWriter fw = new FileWriter(file);
+            f = new File("C:\\Users\\dhiraj56457\\Documents\\AP_CSA\\Blind_Email\\blind-email\\src\\main\\resources\\contents.txt");
+            System.out.println(f);
+            FileWriter fw = new FileWriter(f);
             PrintWriter pw = new PrintWriter(fw);
+            pw.print("");
             
             for (int i = 0; i < messages.length; i++) {
                 System.out.println("Mail " + (i+1) + " Subject: " + messages[i].getSubject());
@@ -109,8 +106,6 @@ public class GmailInbox {
                 pw.println("Mail " + (i+1) + " Content: \n" + getTextFromMessage(messages[i]));
                 
                 pw.println("");
-                
-                // System.out.println("------------------------------\n");
             }
             pw.close();
             inbox.close(true);

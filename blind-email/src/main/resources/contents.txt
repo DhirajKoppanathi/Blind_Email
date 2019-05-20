@@ -5,3 +5,11 @@ Mail 1 Content:
 This is a test email for my computer science entrepreneurship project.
 
 
+Mail 2 Subject: Test Email 2
+Mail 2 Date: Mon May 20 10:26:10 PDT 2019
+Mail 2 Content: 
+
+This is another test email for my project.
+Hello, How are you?
+
+
